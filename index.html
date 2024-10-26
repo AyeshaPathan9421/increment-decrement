@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Increment - Decrement</title>
+    <style>
+        body{
+            background-color: rgb(242, 231, 194);
+        }
+        .card{
+            height: 550px;
+            width: 580px;
+            border: 2px solid black;
+            margin: 50 px auto;
+            background-color: navajowhite;
+            border-radius: 10px;
+            border: 6px doubble pink;
+            
+        }
+        .product-img{
+            height: 300px;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+           margin-right: 20px;
+
+        }
+        .product-name{
+            text-align: center;
+            color: orangered;
+        }
+        .product-price{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .btn-buynow{
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            height: 30px;
+            width: 170px;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .inc-dec-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .quantity-btn{
+            font-weight: bolder;
+            font-size: larger;
+            background-color: black;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+        }
+        .quantity{
+            font-size: larger;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="product-img" src="./img/lipstick.jpg" alt="oneplus-earbuds">
+        <h3 class="product-name">lipstick</h3>
+        <p class="product-price">Price: ₹5000/-</p>
+
+        <div class="inc-dec-container">
+
+            <button class="quantity-btn" onclick="dec()">-</button>
+            <span class="quantity" id="quantity">1</span>
+            <button class="quantity-btn" onclick="inc()">+</button>
+
+        </div> <br>
+        <button class="btn-buynow">Buy Now</button>
+    </div>
+
+    <script>
+        const quantityElement = document.getElementById('quantity');
+
+        function inc(){
+
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+
+        }
+
+        function dec(){
+            let quantity = parseInt(quantityElement.innerText);
+
+            if(quantity>1){
+                quantityElement.innerText = --quantity;
+            }
+        }
+    </script>
+</body>
+</html>
